@@ -1,11 +1,11 @@
 import sqlalchemy
 import pandas as pd
-from config import DB_CONFIG
+import streamlit as st
 
 def get_engine():
     url = (
-        f"mysql+pymysql://{DB_CONFIG['user']}:{DB_CONFIG['password']}"
-        f"@{DB_CONFIG['host']}:{DB_CONFIG['port']}/{DB_CONFIG['database']}"
+        f"mysql+pymysql://{st.secrets['db']['user']}:{st.secrets['db']['password']}"
+        f"@{st.secrets['db']['host']}:{st.secrets['db']['port']}/{st.secrets['db']['database']}"
     )
     return sqlalchemy.create_engine(url)
 
