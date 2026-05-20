@@ -1,0 +1,6 @@
+streamlit==1.57.0
+plotly
+pandas
+altair
+sqlalchemy
+pymysql
